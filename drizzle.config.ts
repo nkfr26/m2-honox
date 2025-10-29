@@ -5,5 +5,4 @@ export default defineConfig({
   schema: ["./db/schema.ts"],
   dialect: "sqlite",
   dbCredentials: { url: "file:local.db" },
-  casing: "snake_case",
 });

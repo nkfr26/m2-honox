@@ -6,8 +6,8 @@ export const photosTable = sqliteTable("photos", {
   title: text().notNull(),
   place: text().notNull(),
   url: text().notNull(),
-  createdAt: int({ mode: "timestamp" }).notNull(),
-  updatedAt: int({ mode: "timestamp" })
+  createdAt: int("created_at", { mode: "timestamp" }).notNull(),
+  updatedAt: int("updated_at", { mode: "timestamp" })
     .default(sql`current_timestamp`)
     .notNull(),
 });
