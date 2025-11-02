@@ -4,17 +4,16 @@ import { photosTable } from "../../../../db/schema";
 
 export const POST = createRoute(async (c) => {
   const formData = await c.req.parseBody();
-  await c
-    .get("db")
+  await c.var.db
     .delete(photosTable)
     .where(eq(photosTable.id, Number(formData.id)));
   return c.redirect("/admin/photos");
 });
 
 export default createRoute(async (c) => {
-  const photos = await c.get("db").select().from(photosTable);
+  const photos = await c.var.db.select().from(photosTable);
   return c.render(
-    <div>
+    <>
       <header>
         <h1>写真一覧</h1>
         <a href="/admin/photos/create">写真情報新規登録</a>
@@ -48,6 +47,6 @@ export default createRoute(async (c) => {
           ))}
         </tbody>
       </table>
-    </div>,
+    </>,
   );
 });
