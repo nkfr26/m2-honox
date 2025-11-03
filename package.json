@@ -10,8 +10,10 @@
   "private": true,
   "dependencies": {
     "@libsql/client": "^0.15.15",
+    "@standard-schema/spec": "^1.0.0",
+    "@standard-schema/utils": "^0.3.0",
     "drizzle-orm": "^0.44.7",
-    "hono": "^4.10.3",
+    "hono": "link:hono",
     "honox": "^0.1.49",
     "valibot": "^1.1.0"
   },
